@@ -1,0 +1,27 @@
+{
+  "name": "lumen-ds",
+  "version": "0.1.0",
+  "description": "Design system em CSS puro com tokens, dark mode e acessibilidade",
+  "type": "module",
+  "private": true,
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "build": "tsx src/scripts/build-tokens.ts",
+    "test": "vitest run",
+    "test:coverage": "vitest run --coverage",
+    "lint": "npm run lint:css && npm run lint:ts",
+    "lint:css": "stylelint \"src/styles/**/*.css\"",
+    "lint:ts": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.0",
+    "@vitest/coverage-v8": "^3.2.4",
+    "stylelint": "^16.12.0",
+    "stylelint-config-standard": "^37.0.0",
+    "tsx": "^4.20.3",
+    "typescript": "^5.8.3",
+    "vitest": "^3.2.4"
+  }
+}
