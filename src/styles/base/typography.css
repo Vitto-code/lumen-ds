@@ -1,0 +1,51 @@
+/* Tipografia base: consome apenas tokens semanticos, nunca valores fixos. */
+
+body {
+  font-family: var(--lumen-font-family-base);
+  font-size: var(--lumen-font-size-md);
+  color: var(--lumen-color-text-primary);
+  background-color: var(--lumen-color-surface);
+}
+
+h1 {
+  font-size: var(--lumen-font-size-3xl);
+  font-weight: var(--lumen-font-weight-bold);
+  line-height: var(--lumen-line-height-tight);
+}
+
+h2 {
+  font-size: var(--lumen-font-size-2xl);
+  font-weight: var(--lumen-font-weight-semibold);
+  line-height: var(--lumen-line-height-tight);
+}
+
+h3 {
+  font-size: var(--lumen-font-size-xl);
+  font-weight: var(--lumen-font-weight-semibold);
+  line-height: var(--lumen-line-height-tight);
+}
+
+p {
+  max-width: 65ch;
+  line-height: var(--lumen-line-height-relaxed);
+}
+
+a {
+  color: var(--lumen-color-accent);
+  text-underline-offset: 0.15em;
+}
+
+a:hover {
+  color: var(--lumen-color-accent-hover);
+}
+
+code,
+pre {
+  font-family: var(--lumen-font-family-mono);
+  font-size: var(--lumen-font-size-sm);
+}
+
+::selection {
+  color: var(--lumen-color-accent-contrast);
+  background-color: var(--lumen-color-accent);
+}
