@@ -1,0 +1,57 @@
+/* Botao com variantes primary/secondary e estados de foco, hover e disabled. */
+
+.lumen-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--lumen-space-2);
+  padding: var(--lumen-space-2) var(--lumen-space-4);
+  font-weight: var(--lumen-font-weight-medium);
+  border: 1px solid transparent;
+  border-radius: var(--lumen-radius-md);
+  cursor: pointer;
+  transition:
+    background-color 0.15s ease,
+    border-color 0.15s ease,
+    color 0.15s ease;
+}
+
+.lumen-btn:focus-visible {
+  outline: 2px solid var(--lumen-color-focus-ring);
+  outline-offset: 2px;
+}
+
+.lumen-btn:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+.lumen-btn--primary {
+  color: var(--lumen-color-accent-contrast);
+  background-color: var(--lumen-color-accent);
+}
+
+.lumen-btn--primary:hover:not(:disabled) {
+  background-color: var(--lumen-color-accent-hover);
+}
+
+.lumen-btn--secondary {
+  color: var(--lumen-color-text-primary);
+  background-color: transparent;
+  border-color: var(--lumen-color-border);
+}
+
+.lumen-btn--secondary:hover:not(:disabled) {
+  background-color: var(--lumen-color-surface-muted);
+}
+
+.lumen-btn--danger {
+  color: var(--lumen-color-danger-contrast);
+  background-color: var(--lumen-color-danger);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .lumen-btn {
+    transition: none;
+  }
+}
