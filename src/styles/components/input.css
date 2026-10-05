@@ -1,0 +1,54 @@
+/* Campo de formulario: label, input, hint e erro com suporte a aria-invalid. */
+
+.lumen-field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--lumen-space-2);
+}
+
+.lumen-label {
+  font-size: var(--lumen-font-size-sm);
+  font-weight: var(--lumen-font-weight-medium);
+  color: var(--lumen-color-text-primary);
+}
+
+.lumen-input {
+  padding: var(--lumen-space-2) var(--lumen-space-3);
+  color: var(--lumen-color-text-primary);
+  background-color: var(--lumen-color-surface);
+  border: 1px solid var(--lumen-color-border);
+  border-radius: var(--lumen-radius-md);
+  transition:
+    border-color 0.15s ease,
+    box-shadow 0.15s ease;
+}
+
+.lumen-input::placeholder {
+  color: var(--lumen-color-text-secondary);
+}
+
+.lumen-input:focus-visible {
+  border-color: var(--lumen-color-focus-ring);
+  outline: none;
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--lumen-color-focus-ring) 30%, transparent);
+}
+
+.lumen-input[aria-invalid='true'] {
+  border-color: var(--lumen-color-danger);
+}
+
+.lumen-hint {
+  font-size: var(--lumen-font-size-xs);
+  color: var(--lumen-color-text-secondary);
+}
+
+.lumen-error {
+  font-size: var(--lumen-font-size-xs);
+  color: var(--lumen-color-danger);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .lumen-input {
+    transition: none;
+  }
+}

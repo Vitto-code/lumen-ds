@@ -1,0 +1,32 @@
+/* Alerta contextual. Usar com role="alert" ou role="status" no HTML. */
+
+.lumen-alert {
+  display: flex;
+  gap: var(--lumen-space-3);
+  align-items: flex-start;
+  padding: var(--lumen-space-3) var(--lumen-space-4);
+  font-size: var(--lumen-font-size-sm);
+  color: var(--lumen-color-text-primary);
+  border: 1px solid;
+  border-radius: var(--lumen-radius-md);
+}
+
+.lumen-alert--info {
+  border-color: var(--lumen-color-accent);
+  background-color: color-mix(in srgb, var(--lumen-color-accent) 8%, var(--lumen-color-surface));
+}
+
+.lumen-alert--success {
+  border-color: var(--lumen-color-success);
+  background-color: color-mix(in srgb, var(--lumen-color-success) 8%, var(--lumen-color-surface));
+}
+
+.lumen-alert--warning {
+  border-color: var(--lumen-color-warning);
+  background-color: color-mix(in srgb, var(--lumen-color-warning) 8%, var(--lumen-color-surface));
+}
+
+.lumen-alert--danger {
+  border-color: var(--lumen-color-danger);
+  background-color: color-mix(in srgb, var(--lumen-color-danger) 8%, var(--lumen-color-surface));
+}
