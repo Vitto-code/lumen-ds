@@ -1,0 +1,21 @@
+/* Utilitarios de layout: container, stack (vertical) e cluster (horizontal). */
+
+.lumen-container {
+  width: 100%;
+  max-width: 72rem;
+  padding-inline: var(--lumen-space-4);
+  margin-inline: auto;
+}
+
+.lumen-stack {
+  display: flex;
+  flex-direction: column;
+  gap: var(--lumen-stack-gap, var(--lumen-space-4));
+}
+
+.lumen-cluster {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--lumen-cluster-gap, var(--lumen-space-3));
+  align-items: center;
+}

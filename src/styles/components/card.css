@@ -1,0 +1,23 @@
+/* Card para agrupar conteudo relacionado. */
+
+.lumen-card {
+  padding: var(--lumen-space-5);
+  background-color: var(--lumen-color-surface);
+  border: 1px solid var(--lumen-color-border);
+  border-radius: var(--lumen-radius-lg);
+  box-shadow: var(--lumen-shadow-sm);
+}
+
+.lumen-card__title {
+  margin-bottom: var(--lumen-space-2);
+  font-size: var(--lumen-font-size-lg);
+  font-weight: var(--lumen-font-weight-semibold);
+}
+
+.lumen-card__body {
+  color: var(--lumen-color-text-secondary);
+}
+
+.lumen-card--elevated {
+  box-shadow: var(--lumen-shadow-lg);
+}
