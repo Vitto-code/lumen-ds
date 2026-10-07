@@ -1,0 +1,44 @@
+/* Utilitarios de acessibilidade: sr-only, skip link, foco e movimento reduzido. */
+
+.lumen-sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  white-space: nowrap;
+  border: 0;
+  clip-path: inset(50%);
+}
+
+.lumen-skip-link {
+  position: absolute;
+  top: -100%;
+  left: var(--lumen-space-4);
+  z-index: 100;
+  padding: var(--lumen-space-2) var(--lumen-space-4);
+  color: var(--lumen-color-accent-contrast);
+  background-color: var(--lumen-color-accent);
+  border-radius: var(--lumen-radius-md);
+}
+
+.lumen-skip-link:focus-visible {
+  top: var(--lumen-space-4);
+}
+
+:focus-visible {
+  outline: 2px solid var(--lumen-color-focus-ring);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}
