@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="pt-BR" data-theme="light">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>lumen-ds | demo</title>
+    <link rel="stylesheet" href="./dist/lumen.css" />
+    <script>
+      // Aplica o tema persistido antes do primeiro paint para evitar flash.
+      (function () {
+        var saved = localStorage.getItem('lumen-theme');
+        if (saved === 'dark' || saved === 'light') {
+          document.documentElement.dataset.theme = saved;
+        } else {
+          document.documentElement.removeAttribute('data-theme');
+        }
+      })();
+    </script>
+  </head>
+  <body>
+    <a class="lumen-skip-link" href="#conteudo">Pular para o conteudo</a>
+
+    <main id="conteudo" class="lumen-container lumen-stack" style="--lumen-stack-gap: var(--lumen-space-6); padding-block: var(--lumen-space-6)">
+      <header class="lumen-cluster" style="justify-content: space-between">
+        <div>
+          <h1>lumen-ds</h1>
+          <p>Design system em CSS puro com tokens, dark mode e acessibilidade.</p>
+        </div>
+        <button id="toggle-tema" class="lumen-btn lumen-btn--secondary" type="button" aria-label="Alternar tema">
+          Alternar tema
+        </button>
+      </header>
+
+      <section class="lumen-stack" aria-labelledby="sec-botoes">
+        <h2 id="sec-botoes">Botoes e badges</h2>
+        <div class="lumen-cluster">
+          <button class="lumen-btn lumen-btn--primary" type="button">Primario</button>
+          <button class="lumen-btn lumen-btn--secondary" type="button">Secundario</button>
+          <button class="lumen-btn lumen-btn--danger" type="button">Perigo</button>
+          <button class="lumen-btn lumen-btn--primary" type="button" disabled>Desabilitado</button>
+        </div>
+        <div class="lumen-cluster">
+          <span class="lumen-badge lumen-badge--accent">Novo</span>
+          <span class="lumen-badge lumen-badge--neutral">Rascunho</span>
+          <span class="lumen-badge lumen-badge--success">Ativo</span>
+          <span class="lumen-badge lumen-badge--danger">Erro</span>
+        </div>
+      </section>
+
+      <section class="lumen-stack" aria-labelledby="sec-form">
+        <h2 id="sec-form">Formulario</h2>
+        <form class="lumen-stack" novalidate>
+          <div class="lumen-field">
+            <label class="lumen-label" for="nome">Nome</label>
+            <input class="lumen-input" id="nome" name="nome" type="text" placeholder="Seu nome" aria-describedby="nome-hint" />
+            <span class="lumen-hint" id="nome-hint">Como voce quer ser chamado.</span>
+          </div>
+          <div class="lumen-field">
+            <label class="lumen-label" for="email">E-mail</label>
+            <input class="lumen-input" id="email" name="email" type="email" value="email-invalido" aria-invalid="true" aria-describedby="email-erro" />
+            <span class="lumen-error" id="email-erro" role="alert">Informe um e-mail valido.</span>
+          </div>
+        </form>
+      </section>
+
+      <section class="lumen-stack" aria-labelledby="sec-alertas">
+        <h2 id="sec-alertas">Alertas</h2>
+        <div class="lumen-alert lumen-alert--info" role="status">Atualizacao disponivel para o tema escuro.</div>
+        <div class="lumen-alert lumen-alert--success" role="status">Alteracoes salvas com sucesso.</div>
+        <div class="lumen-alert lumen-alert--warning" role="alert">Sua sessao expira em 5 minutos.</div>
+        <div class="lumen-alert lumen-alert--danger" role="alert">Falha ao salvar. Tente novamente.</div>
+      </section>
+
+      <section class="lumen-stack" aria-labelledby="sec-cards">
+        <h2 id="sec-cards">Cards</h2>
+        <div class="lumen-cluster" style="align-items: stretch">
+          <article class="lumen-card" style="flex: 1; min-width: 16rem">
+            <h3 class="lumen-card__title">Padrao</h3>
+            <p class="lumen-card__body">Card com sombra sutil para conteudo agrupado.</p>
+          </article>
+          <article class="lumen-card lumen-card--elevated" style="flex: 1; min-width: 16rem">
+            <h3 class="lumen-card__title">Elevado</h3>
+            <p class="lumen-card__body">Variante com mais profundidade para destaque.</p>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <script>
+      document.getElementById('toggle-tema').addEventListener('click', function () {
+        var root = document.documentElement;
+        var next = root.dataset.theme === 'dark' ? 'light' : 'dark';
+        root.dataset.theme = next;
+        localStorage.setItem('lumen-theme', next);
+      });
+    </script>
+  </body>
+</html>
