@@ -33,7 +33,8 @@ export function buildTokens(outDir: string): BuildResult {
   const parts = STYLE_ORDER.map((relativePath) => readFileSync(join(PROJECT_ROOT, relativePath), 'utf8'));
   const bundle = [tokensCss, ...parts].join('\n');
 
-  const targetDir = join(PROJECT_ROOT, outDir);
+  // resolve() respeita outDir absoluto (usado nos testes) e relativo (CLI).
+  const targetDir = resolve(PROJECT_ROOT, outDir);
   mkdirSync(targetDir, { recursive: true });
 
   const tokensPath = join(targetDir, 'tokens.css');
