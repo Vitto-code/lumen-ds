@@ -39,7 +39,7 @@ export const palette = {
   },
 } as const;
 
-export interface ColorTheme {
+export type ColorTheme = {
   surface: string;
   surfaceMuted: string;
   textPrimary: string;
@@ -56,7 +56,7 @@ export interface ColorTheme {
   successContrast: string;
   warning: string;
   warningContrast: string;
-}
+};
 
 export const lightTheme: ColorTheme = {
   surface: '#ffffff',
