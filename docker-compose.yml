@@ -1,0 +1,12 @@
+# Serve a pagina de demonstracao com o CSS ja compilado em dist/.
+# Nao e dependencia do projeto: sem Docker, basta abrir src/demo/index.html.
+
+services:
+  demo:
+    image: nginx:1.27-alpine
+    ports:
+      - "${DEMO_PORT:-8080}:80"
+    volumes:
+      - ./src/demo:/usr/share/nginx/html:ro
+      - ./dist:/usr/share/nginx/html/dist:ro
+    restart: unless-stopped
