@@ -4,7 +4,7 @@
 [![Cobertura](https://img.shields.io/badge/cobertura-97%25-brightgreen)](https://github.com/Vitto-code/lumen-ds)
 [![Licenca](https://img.shields.io/badge/licen%C3%A7a-MIT-blue)](https://github.com/Vitto-code/lumen-ds)
 
-Design system em CSS puro que resolve a inconsistencia visual e a manutencao cara de estilos: uma unica fonte de verdade em TypeScript gera todos os tokens como CSS custom properties, com dark mode, componentes acessiveis e contraste WCAG garantido por testes automatizados.
+Design system em CSS puro que resolve a inconsistencia visual e a manutencao de estilos: uma unica fonte de verdade em TypeScript gera todos os tokens como CSS custom properties, com dark mode, componentes acessiveis e contraste WCAG garantido por testes automatizados.
 
 ## Demonstracao
 
